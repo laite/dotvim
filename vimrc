@@ -20,6 +20,7 @@ Plugin 'tomtom/tcomment_vim.git'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'bling/vim-airline'
 Plugin 'stephenmckinney/vim-dochub'
+Plugin 'tpope/vim-surround'
 
 " YouCompleteMe requires its libraries to be compiled before use,
 " see https://github.com/Valloric/YouCompleteMe#full-installation-guide
