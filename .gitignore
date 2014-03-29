@@ -1,4 +1,4 @@
 view/*
 tmp/*
-bundle/**
-~bundle/vundle
+bundle/*
+!bundle/vundle
