@@ -17,10 +17,13 @@ Plugin 'Raimondi/delimitMate.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'bling/vim-airline'
 Plugin 'stephenmckinney/vim-dochub'
 Plugin 'tpope/vim-surround'
+
+" After installing tern_for_vim one must run `npm install` 
+" in ~/.vim/bundle/tern_for_vim for it to properly work
+Plugin 'marijnh/tern_for_vim'
 
 " YouCompleteMe requires its libraries to be compiled before use,
 " see https://github.com/Valloric/YouCompleteMe#full-installation-guide
