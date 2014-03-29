@@ -20,6 +20,9 @@ Plugin 'tomtom/tcomment_vim.git'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'bling/vim-airline'
 Plugin 'stephenmckinney/vim-dochub'
+
+" YouCompleteMe requires its libraries to be compiled before use,
+" see https://github.com/Valloric/YouCompleteMe#full-installation-guide
 Plugin 'Valloric/YouCompleteMe'
 
 " SnipMate requires two extra libraries
@@ -31,7 +34,7 @@ Plugin 'garbas/vim-snipmate.git'
 filetype plugin indent on
 
 " }}} End vundle install
-"
+
 
 syntax on						" make pretty colors
 set shortmess+=I				" hide start screen
@@ -71,9 +74,6 @@ set foldlevel=99
 
 let mapleader = "ö"
 let g:is_bash=1
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-map <Leader>h :A<CR>
 
 " commandline mappings
 cnoreabbrev vhelp belowright vert help
@@ -84,7 +84,9 @@ cnoremap <C-n> <Down>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " normal mode mappings
+" clear search highlight
 nnoremap <silent> <Leader>ä :nohl<CR>
+
 " create empty lines and return to normal mode
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
@@ -92,51 +94,42 @@ nnoremap <Leader><Leader>o o<ESC>kO<ESC>j
 
 " delete row's contents with leader-d
 nnoremap <Leader>d ^D
+
 " treat c-h as real backspace also in normal mode
 nnoremap <C-H> "_X
+
 " also delete always to void with x/X
 nnoremap x "_x
 nnoremap X "_X
+
 " make Y behave like C and D (yank to the end of line)
 nnoremap Y y$
+
 " easier jumping between windows and tabs
 nnoremap <C-j> <C-w>w
 nnoremap <C-k> <C-w>W
 nnoremap <C-h> gT
 nnoremap <C-l> gt
+
 " entering insert mode hides hlsearch, but we want to get it back with n and N
 nnoremap n :set hlsearch<CR>n
 nnoremap N :set hlsearch<CR>N
-" use <c-p> immediately on the command line
+
+" use <c-p> to jump immediately to the command line
 nnoremap <C-p> :<C-p>
+
 " make some use for 'ä'
 nnoremap ä `
 nnoremap ää ``
-nnoremap Ä %
 vnoremap ä `
 vnoremap ää ``
-vnoremap Ä %
 
 " use - as backwards search
 nnoremap - ?
 vnoremap - ?
 
-" insert mode mappings
-inoremap <C-U> <C-G>u<C-U>
-
 " autocomplete { and newline, move cursor to middle
 inoremap {<CR> {<CR>}<Esc>O
-
-" complete brackets, make <c-l> exit latest, <leader><c-l> the one before that
-let leavechar=""
-" inoremap ( ()<Esc>:let lastleavechar=leavechar<CR>:let leavechar=")"<CR>i
-" inoremap [ []<Esc>:let lastleavechar=leavechar<CR>:let leavechar="]"<CR>i
-" inoremap { {}<Esc>:let lastleavechar=leavechar<CR>:let leavechar="}"<CR>i
-" inoremap < <><Esc>:let lastleavechar=leavechar<CR>:let leavechar=">"<CR>i
-" inoremap " ""<Esc>:let lastleavechar=leavechar<CR>:let leavechar="\""<CR>i
-" inoremap ' ''<Esc>:let lastleavechar=leavechar<CR>:let leavechar="\'"<CR>i
-" imap <C-L> <Esc>:exec "normal f" . leavechar<CR>a
-" imap <Leader><C-L> <Esc>:exec "normal f" . lastleavechar<CR>a
 
 " by default, brackets are autocompleted, we can skip this with leader-key
 inoremap <Leader>[ [
@@ -154,31 +147,8 @@ inoremap <Leader>ö ö
 " make C-p into <esc> until I figure out something better
 inoremap <C-p> <Esc>
 
-
-" join with previous line and continue from middle
-inoremap <C-K>k <Esc>kJi
-" join with previous line and continue from the end
-inoremap <C-K>a <Esc>kJA
-" join with previous line and exit insert mode
-inoremap <C-K>[ <Esc>kJ
-" make <C-J> add ; and newline
-inoremap <C-J> ;<CR>
-
-" c-b is currently not used
-" inoremap <C-B>
-
-
-
-" other key bindings
-"This allows for change paste motion cp{motion}
-nmap <silent> cp :set opfunc=ChangePaste<CR>g@
-function! ChangePaste(type, ...)
-    silent exe "normal! `[v`]\"_c"
-    silent exe "normal! p"
-endfunction
-
 " define motion 'numbers' in external file
-source $HOME/.numbermaps.vim
+source ~/.vim/numbermaps.vim
 
 " add quick way to toggle between normal and relative line numbers
 function! NumberToggle()
@@ -189,16 +159,14 @@ function! NumberToggle()
 	endif
 endfunc
 
+" call numbertoggle through <c-n>
 nnoremap <C-n> :call NumberToggle()<cr>
 
 
-""" Plugins """
+""" Plugins {{{
 
 " Fugitive
 nnoremap <Leader>s :Gstatus<CR>
-
-" EasyMotion
-let g:EasyMotion_leader_key = '<Leader>'
 
 " Tagbar
 let g:tagbar_left = 1
@@ -220,7 +188,6 @@ nnoremap <Leader>g :CtrlPBufTag<CR>
 nnoremap <Leader>G :CtrlPBufTagAll<CR>
 nnoremap <Leader>F :CtrlP %:h<CR>
 
-
 " delimitMate
 " use <C-l> in insert mode for escaping brackets
 imap <C-l> <Plug>delimitMateS-Tab
@@ -240,7 +207,6 @@ nnoremap <Leader>c :TComment<CR>
 vnoremap <Leader>c :TComment<CR>
 
 " dbgPaVim
-
 let g:dbgPavimPort = 9009
 let g:dbgPavimBreakAtEntry = 0
 nnoremap <Leader>p :Bp<CR>
@@ -252,8 +218,7 @@ imap <C-t> <Esc>a<Plug>snipMateNextOrTrigger
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-""" Plugins End """
-
+""" }}} End Plugins
 
 set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
@@ -271,22 +236,9 @@ endfunction
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-
-  " set manual folding only for textfiles and files without syntax, and remember it
-  au Syntax text setlocal foldmethod=manual
-  au BufWinLeave ?* if &syntax == 'text' | mkview! | endif
-  au BufWinEnter ?* if &syntax == 'text' | silent! loadview | endif
-
-  au BufWinLeave ?* if &syntax == '' | mkview! | endif
-  au BufWinEnter ?* if &syntax == '' | silent! loadview | endif
-
   " hide search highlighting when entering insert mode
   " new search through / or ? returns hls, as do letters n and N
   autocmd InsertEnter * :set nohlsearch
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
 
   " When editing a file, always jump to the last known cursor position.
   autocmd BufReadPost *
@@ -299,15 +251,6 @@ if has("autocmd")
 
   " don't automatically add commentmark when creating newline with o/O
   autocmd FileType cpp set fo-=o
-
-  " don't use cpp11 additions by default
-  " au BufNewFile,BufRead *.cpp set syntax=cpp11
-  
-  " use external browser through script with php files
-  " autocmd FileType php set keywordprg=~/.vim/php_doc
-
-  augroup END
-
 else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
@@ -317,6 +260,7 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" Source local additions if they exists
 if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
