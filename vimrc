@@ -2,6 +2,37 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Vundle install {{{
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" vundle
+Plugin 'gmarik/vundle'
+
+" Other plugins from github
+Plugin 'majutsushi/tagbar'
+Plugin 'Raimondi/delimitMate.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'tomtom/tcomment_vim.git'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'bling/vim-airline'
+Plugin 'stephenmckinney/vim-dochub'
+Plugin 'Valloric/YouCompleteMe'
+
+" SnipMate requires two extra libraries
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate.git'
+
+" Enable file type detection.
+filetype plugin indent on
+
+" }}} End vundle install
+"
+
 syntax on						" make pretty colors
 set shortmess+=I				" hide start screen
 set backspace=indent,eol,start 	" allow backspacing over everything in insert mode
@@ -240,8 +271,6 @@ endfunction
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  filetype plugin indent on
 
   " set manual folding only for textfiles and files without syntax, and remember it
   au Syntax text setlocal foldmethod=manual
