@@ -29,10 +29,9 @@ Plugin 'marijnh/tern_for_vim'
 " see https://github.com/Valloric/YouCompleteMe#full-installation-guide
 Plugin 'Valloric/YouCompleteMe'
 
-" SnipMate requires two extra libraries
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate.git'
+" Ultisnips and its snippet repository
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Enable file type detection.
 filetype plugin indent on
@@ -215,12 +214,18 @@ let g:dbgPavimPort = 9009
 let g:dbgPavimBreakAtEntry = 0
 nnoremap <Leader>p :Bp<CR>
 
-" snipMate
-" sniptrigger that doesn't conflict with YouCompleteMe
-imap <C-t> <Esc>a<Plug>snipMateNextOrTrigger
+" ultiSnips
+let g:UltiSnipsExpandTrigger="<C-j>" " We use c-j as key since <tab> conflicts with YCM
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+
+" map old snippetkey to a new one for convenience :)
+imap <C-t> <C-j>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_use_ultisnips_completer = 1
 
 """ }}} End Plugins
 
