@@ -53,8 +53,6 @@ set hlsearch					" highlight search results
 set tabstop=4					" number of spaces a tab counts for
 set noexpandtab					" don't handle tab as spaces
 set shiftwidth=4				" number of spaces for (auto)indent
-"set softtabstop=4				" number of spaces that a <tab> counts
-"set smartindent					" start new lines indented
 set nowrap						" don't wrap long lines
 set ignorecase smartcase 		" ignore case on lowcase-searches
 set scrolloff=5 				" always +- 5 rows in sight
@@ -64,16 +62,22 @@ set showbreak=\ -->\
 set number
 set relativenumber				" use relative numbers by default
 set tw=0
+set ch=1
 let loaded_matchparen = 1
+
+set clipboard=autoselect,unnamedplus
 
 set listchars=extends:>,precedes:<
 
 " foldingmethods for gvim are specified in .gvimrc (they differ a bit)
 set foldcolumn=2
 set foldmethod=indent
-set foldnestmax=2
+set foldnestmax=4
 set foldminlines=1
 set foldlevel=99
+
+set showtabline=1
+set laststatus=2
 
 let mapleader = "ö"
 let g:is_bash=1

@@ -1,27 +1,18 @@
 " .gvimrc, by Markus Klinga
 " most options are already set up in .vimrc!
 
-set ch=1
 set guioptions=agit
 set guicursor+=a:blinkon0
 set mousehide		" Hide the mouse when typing text
 set guifont=Dina\ 9
 
-set clipboard=autoselect,unnamedplus
-
 " set initial size of gvim
 set lines=40
 set columns=140
 
-" we presume that gvim is mostly for coding
+" we presume that gvim is mostly for coding (so larger foldcolumn)
 " whereas vim is all-around editor
 set foldcolumn=3
-set foldmethod=indent
-set foldnestmax=3
-set foldminlines=1
-
-set showtabline=2
-set laststatus=2
 
 if exists("+showtabline")
   function! MyTabLine()
