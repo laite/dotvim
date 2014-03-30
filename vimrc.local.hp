@@ -1,0 +1,4 @@
+" no relative numbers
+set norelativenumber
+" set pretty colors
+color jellybeans
