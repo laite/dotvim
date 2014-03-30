@@ -64,6 +64,7 @@ set relativenumber				" use relative numbers by default
 set tw=0
 set ch=1
 let loaded_matchparen = 1
+set completeopt-=preview
 
 set clipboard=autoselect,unnamedplus
 
