@@ -10,6 +10,9 @@ set guifont=Dina\ 9
 set lines=40
 set columns=140
 
+" Always show tabline on gvim
+set showtabline=2
+
 " we presume that gvim is mostly for coding (so larger foldcolumn)
 " whereas vim is all-around editor
 set foldcolumn=3
