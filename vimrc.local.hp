@@ -1,4 +1,5 @@
-set guifont="Monospace\ 9"
+" no relative numbers
+set norelativenumber
 
 " set pretty colors
 if has("gui_running")

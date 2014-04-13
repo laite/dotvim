@@ -1,11 +1,6 @@
 " .gvimrc, by Markus Klinga
 " most options are already set up in .vimrc!
 
-set guioptions=agit
-set guicursor+=a:blinkon0
-set mousehide		" Hide the mouse when typing text
-set guifont=Dina\ 9
-
 " set initial size of gvim
 set lines=40
 set columns=140
@@ -65,5 +60,3 @@ if exists("+showtabline")
   endfunction
   set tabline=%!MyTabLine()
 endif
-
-color laite07

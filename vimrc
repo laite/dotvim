@@ -64,6 +64,7 @@ set relativenumber				" use relative numbers by default
 set tw=0
 set ch=1
 let loaded_matchparen = 1
+set completeopt-=preview
 
 set clipboard=autoselect,unnamedplus
 
@@ -245,6 +246,14 @@ function! EnhanceCppSyntax()
   syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?\(\:\)\?$"
   hi def link cppFuncDef Special
 endfunction
+
+if has("gui_running")
+	set guioptions=agit
+	set guicursor+=a:blinkon0
+	set mousehide		" Hide the mouse when typing text
+	set guifont=Dina\ 9
+endif
+
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
