@@ -1,4 +1,4 @@
-set guifont="Monospace\ 9"
+set guifont=Dina\ 9
 
 " set pretty colors
 if has("gui_running")

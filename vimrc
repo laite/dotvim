@@ -20,6 +20,7 @@ Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
 Plugin 'stephenmckinney/vim-dochub'
 Plugin 'tpope/vim-surround'
+Plugin 'mhinz/vim-startify'
 
 " After installing tern_for_vim one must run `npm install` 
 " in ~/.vim/bundle/tern_for_vim for it to properly work
@@ -190,6 +191,7 @@ let g:ctrlp_working_path_mode = ''
 let g:ctrlp_use_caching = 25
 let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = '2vjr'
+let g:ctrlp_reuse_window = 'startify'
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>g :CtrlPBufTag<CR>
@@ -232,6 +234,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_use_ultisnips_completer = 1
 
+" vim-startify
+let g:startify_session_persistence = 1
+
 """ }}} End Plugins
 
 set directory=~/.vim/tmp/
@@ -239,7 +244,7 @@ set backupdir=~/.vim/tmp/
 
 " don't save basic options or folds with the session
 set ssop-=options
-set ssop-=folds
+" set ssop-=folds
 
 " Add highlighting for function definition in C++
 function! EnhanceCppSyntax()
