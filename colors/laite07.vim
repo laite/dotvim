@@ -79,4 +79,6 @@ hi! link CursorColumn	CursorLine
 hi DbgBreakPt gui=none guifg=#f6f3e8 guibg=#161616
 hi DbgCurrent gui=none guifg=#ffaa00 guibg=#161616
 
+hi javaScriptNumber		ctermfg=173		cterm=none		guifg=#f58900	gui=none
+
 " vim:set ts=4 sw=4 noet:
