@@ -19,6 +19,7 @@ Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
 Plugin 'stephenmckinney/vim-dochub'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 
