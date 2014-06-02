@@ -73,7 +73,7 @@ set clipboard=autoselect,unnamedplus
 set listchars=extends:>,precedes:<
 
 " foldingmethods for gvim are specified in .gvimrc (they differ a bit)
-set foldcolumn=2
+set foldcolumn=0
 set foldmethod=indent
 set foldnestmax=4
 set foldminlines=1
@@ -232,7 +232,7 @@ imap <C-t> <C-j>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_use_ultisnips_completer = 1
 
 " vim-startify
