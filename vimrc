@@ -18,7 +18,8 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
-Plugin 'stephenmckinney/vim-dochub'
+Plugin 'vim-ruby/vim-ruby'
+" Plugin 'stephenmckinney/vim-dochub'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 
@@ -231,7 +232,7 @@ imap <C-t> <C-j>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_use_ultisnips_completer = 1
 
 " vim-startify
