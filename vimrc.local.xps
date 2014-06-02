@@ -2,7 +2,9 @@ set guifont="Monospace\ 9"
 
 " set pretty colors
 if has("gui_running")
-	color laite07
+	" color laite07
+	color pyte_laite
+	let g:airline_theme = "kalisi"
 else
 	color jellybeans
 endif
