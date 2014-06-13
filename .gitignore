@@ -1,5 +1,4 @@
 view/*
 tmp/*
 session/*
-bundle/*
-!bundle/vundle
+bundle
