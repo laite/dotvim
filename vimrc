@@ -22,6 +22,9 @@ Plugin 'stephenmckinney/vim-dochub'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
+Plugin 'lukaszkorecki/CoffeeTags'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tacahiroy/ctrlp-funky'
 
 " After installing tern_for_vim one must run `npm install` 
 " in ~/.vim/bundle/tern_for_vim for it to properly work
@@ -185,6 +188,7 @@ let g:tagbar_autoclose = 1
 nnoremap <Leader>t :TagbarToggle<CR>
 
 " ctrlp
+let g:ctlp_extensions = ['funky']
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_max_height = 25
@@ -193,6 +197,11 @@ let g:ctrlp_use_caching = 25
 let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](bundle|node_modules)$',
+  \ 'file': '\v\.(ps|png|gif|exe|so|jpg|svg|ttf|pdf|zip)$',
+  \ 'link': '',
+  \ }
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>g :CtrlPBufTag<CR>
