@@ -75,6 +75,8 @@ set clipboard=autoselect,unnamedplus
 
 set listchars=extends:>,precedes:<
 
+set wildignore=node_modules/**,*.png,*.gif,*.jpg,*.tmp
+
 " foldingmethods for gvim are specified in .gvimrc (they differ a bit)
 set foldcolumn=0
 set foldmethod=indent
