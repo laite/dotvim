@@ -278,6 +278,7 @@ if has("autocmd")
   " hide search highlighting when entering insert mode
   " new search through / or ? returns hls, as do letters n and N
   autocmd InsertEnter * :set nohlsearch
+  autocmd BufRead,BufNewFile *.less set filetype=less
 
   " When editing a file, always jump to the last known cursor position.
   autocmd BufReadPost *
