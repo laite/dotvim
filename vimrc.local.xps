@@ -3,9 +3,9 @@ Plugin 'groenewege/vim-less'
 
 set guifont="Monospace\ 9"
 " These are dev options for Lehtilompakko
-" set tabstop=2					" number of spaces a tab counts for
-" set expandtab					" don't handle tab as spaces
-" set shiftwidth=2				" number of spaces for (auto)indent
+set tabstop=2					" number of spaces a tab counts for
+set expandtab					" don't handle tab as spaces
+set shiftwidth=2				" number of spaces for (auto)indent
 
 " set pretty colors
 if has("gui_running")
@@ -17,3 +17,4 @@ else
 endif
 
 au BufRead,BufNewFile *.coffee setfiletype coffee
+au BufRead,BufNewFile *.txt set foldmethod=manual
