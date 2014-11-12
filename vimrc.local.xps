@@ -16,5 +16,3 @@ else
 	color jellybeans
 endif
 
-au BufRead,BufNewFile *.coffee setfiletype coffee
-au BufRead,BufNewFile *.txt set foldmethod=manual
