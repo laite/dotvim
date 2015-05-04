@@ -10,7 +10,8 @@ set shiftwidth=2				" number of spaces for (auto)indent
 " set pretty colors
 if has("gui_running")
 	" color laite07
-	color pyte_laite
+	" color pyte_laite
+  color corporation
 	let g:airline_theme = "kalisi"
 else
 	color jellybeans
