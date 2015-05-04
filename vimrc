@@ -206,7 +206,7 @@ let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](bundle|node_modules)$',
+  \ 'dir':  '\v[\/](bundle|node_modules|bower_components)$',
   \ 'file': '\v\.(ps|png|gif|exe|so|jpg|svg|ttf|pdf|zip)$',
   \ 'link': '',
   \ }
