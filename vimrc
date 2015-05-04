@@ -18,13 +18,15 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
+
+Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
-" Plugin 'stephenmckinney/vim-dochub'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " After installing tern_for_vim one must run `npm install` 
 " in ~/.vim/bundle/tern_for_vim for it to properly work
@@ -142,6 +144,10 @@ vnoremap ää ``
 " use - as backwards search
 nnoremap - ?
 vnoremap - ?
+
+" move only linewise
+nnoremap j gj
+nnoremap k gk
 
 " autocomplete { and newline, move cursor to middle
 inoremap {<CR> {<CR>}<Esc>O
