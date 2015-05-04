@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/laite/workspace/timetracker/src'
+let g:netrw_dirhist_2='/home/laite/workspace/timetracker/src/server'
+let g:netrw_dirhist_3='/data/str/Dropbox/notes/Owncloud'

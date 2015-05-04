@@ -285,6 +285,8 @@ if has("autocmd")
   " new search through / or ? returns hls, as do letters n and N
   autocmd InsertEnter * :set nohlsearch
   autocmd BufRead,BufNewFile *.less set filetype=less
+  autocmd BufRead,BufNewFile *.coffee setfiletype coffee
+  autocmd BufRead,BufNewFile *.txt set foldmethod=manual
 
   " When editing a file, always jump to the last known cursor position.
   autocmd BufReadPost *

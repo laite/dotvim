@@ -3,7 +3,7 @@ set guifont=Liberation\ Mono\ 9
 " set pretty colors
 if has("gui_running")
 	" color laite07
-	color pyte_laite
+	color mayansmoke
 	let g:airline_theme = "kalisi"
 else
 	color jellybeans
