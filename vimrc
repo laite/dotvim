@@ -25,6 +25,9 @@ Plugin 'mhinz/vim-startify'
 Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tacahiroy/ctrlp-funky'
+" Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'chase/vim-ansible-yaml'
+" Plugin 'groenewege/vim-less'
 
 " After installing tern_for_vim one must run `npm install` 
 " in ~/.vim/bundle/tern_for_vim for it to properly work
