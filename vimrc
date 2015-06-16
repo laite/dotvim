@@ -78,7 +78,7 @@ set clipboard=autoselect,unnamedplus
 
 set listchars=extends:>,precedes:<
 
-set wildignore=node_modules/**,*.png,*.gif,*.jpg,*.tmp
+set wildignore=bower_components,node_modules/**,*.png,*.gif,*.jpg,*.tmp
 
 " foldingmethods for gvim are specified in .gvimrc (they differ a bit)
 set foldcolumn=0
@@ -203,7 +203,7 @@ let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](bundle|node_modules)$',
+  \ 'dir':  '\v[\/](bundle|vendor|node_modules)$',
   \ 'file': '\v\.(ps|png|gif|exe|so|jpg|svg|ttf|pdf|zip)$',
   \ 'link': '',
   \ }
