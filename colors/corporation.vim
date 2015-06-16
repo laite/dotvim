@@ -101,5 +101,4 @@ hi cursorim guifg=#080a0b guibg=#536991 guisp=#536991 gui=NONE ctermfg=232 cterm
 hi cssAttr guifg=#e0e0e0
 hi cssProp guifg=#e0e0e0
 hi cssIdentifier guifg=#455778
->>>>>>> 8f167a2c57ebb87034beba3c52dcf2c9043da911
 "hi clear -- no settings --
