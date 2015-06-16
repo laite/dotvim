@@ -18,8 +18,9 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
+
+Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
-" Plugin 'stephenmckinney/vim-dochub'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 Plugin 'lukaszkorecki/CoffeeTags'
@@ -160,6 +161,10 @@ vnoremap ää ``
 nnoremap - ?
 vnoremap - ?
 
+" move only linewise
+nnoremap j gj
+nnoremap k gk
+
 " autocomplete { and newline, move cursor to middle
 inoremap {<CR> {<CR>}<Esc>O
 
@@ -217,7 +222,7 @@ let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](bundle|vendor|node_modules)$',
+  \ 'dir':  '\v[\/](bundle|node_modules|bower_components)$',
   \ 'file': '\v\.(ps|png|gif|exe|so|jpg|svg|ttf|pdf|zip)$',
   \ 'link': '',
   \ }
