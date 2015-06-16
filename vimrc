@@ -101,7 +101,16 @@ cnoremap <C-n> <Down>
 " add helpful path expander - command on active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" normal mode mappings
+
+""" normal mode mappings
+
+
+" use <space> as :
+nnoremap <Space> :
+
+" quick save
+nnoremap K :w<CR>
+
 " clear search highlight
 nnoremap <silent> <Leader>ä :nohl<CR>
 
@@ -115,6 +124,11 @@ nnoremap <Leader>d ^D
 
 " treat c-h as real backspace also in normal mode
 nnoremap <C-H> "_X
+
+" use | to indent the lint
+nnoremap \| =
+nnoremap \|\| ==
+nnoremap <Leader>\| \|
 
 " also delete always to void with x/X
 nnoremap x "_x
@@ -240,9 +254,6 @@ nnoremap <Leader>p :Bp<CR>
 let g:UltiSnipsExpandTrigger="<C-j>" " We use c-j as key since <tab> conflicts with YCM
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
-
-" map old snippetkey to a new one for convenience :)
-imap <C-t> <C-j>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
