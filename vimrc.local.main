@@ -1,8 +1,10 @@
 set guifont=Liberation\ Mono\ 9
 
-"set tabstop=2					" number of spaces a tab counts for
-"set expandtab					" don't handle tab as spaces
-"set shiftwidth=2				" number of spaces for (auto)indent
+set tabstop=2					" number of spaces a tab counts for
+set expandtab					" don't handle tab as spaces
+set shiftwidth=2				" number of spaces for (auto)indent
+
+set sessionoptions=blank,buffers,curdir,help,tabpages,winsize
 
 " set pretty colors
 if has("gui_running")
