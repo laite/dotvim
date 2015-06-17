@@ -259,6 +259,7 @@ nnoremap <Leader>p :Bp<CR>
 let g:UltiSnipsExpandTrigger="<C-j>" " We use c-j as key since <tab> conflicts with YCM
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
