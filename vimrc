@@ -102,6 +102,11 @@ cnoremap <C-n> <Down>
 " add helpful path expander - command on active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" map [[ and ]] to look for { anywhere instead of default 'start/end of line' 
+ :map [[ ?{<CR>w99[{
+ :map ][ /}<CR>b99]}
+ :map ]] j0[[%/{<CR>
+ :map [] k$][%?}<CR>
 
 """ normal mode mappings
 
