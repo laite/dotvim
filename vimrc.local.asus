@@ -1,0 +1,9 @@
+set guifont=Liberation\ Mono\ 10
+
+" set pretty colors
+if has("gui_running")
+	color molokai
+	let g:airline_theme = "kalisi"
+else
+	color jellybeans
+endif
