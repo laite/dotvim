@@ -30,6 +30,8 @@ Plugin 'tacahiroy/ctrlp-funky'
 " Plugin 'chase/vim-ansible-yaml'
 " Plugin 'groenewege/vim-less'
 
+Plugin 'derekwyatt/vim-scala'
+
 " After installing tern_for_vim one must run `npm install` 
 " in ~/.vim/bundle/tern_for_vim for it to properly work
 Plugin 'marijnh/tern_for_vim'
@@ -247,6 +249,8 @@ imap <Leader><C-l> <Plug>delimitMateJumpMany
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Syntastic
+let g:syntastic_scala_checkers = ['fsc']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
