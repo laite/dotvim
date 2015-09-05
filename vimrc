@@ -14,7 +14,7 @@ Plugin 'gmarik/vundle'
 " Other plugins from github
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'kien/ctrlp.vim.git'
+Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
@@ -169,6 +169,9 @@ vnoremap - ?
 " move only linewise
 nnoremap j gj
 nnoremap k gk
+
+" prepare the accidents
+nnoremap q: :q
 
 " autocomplete { and newline, move cursor to middle
 inoremap {<CR> {<CR>}<Esc>O
