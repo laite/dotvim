@@ -67,9 +67,10 @@ hi Comment		ctermfg=246		cterm=none		guifg=#455c60	gui=none
 hi Todo			ctermfg=245		cterm=none		guifg=#8f8f8f	gui=none
 
 " Diffs
-hi DiffAdd gui=none guibg=#005500
-hi DiffDelete gui=none guibg=#aa0000
-hi DiffChange gui=none guibg=#000088
+hi DiffAdd 		gui=none guibg=#225522 guifg=#bbbbbb
+hi DiffDelete 	gui=none guibg=#552222 guifg=#bbbbbb
+hi DiffChange 	gui=none guibg=#222288 guifg=#bbbbbb
+hi DiffText 	gui=none guibg=#222288 guifg=#bbbbbb
 
 " Links
 hi! link FoldColumn		Folded
