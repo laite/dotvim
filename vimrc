@@ -5,7 +5,7 @@ set nocompatible
 " Vundle install {{{
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " vundle
@@ -18,6 +18,7 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree.git'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
@@ -81,7 +82,7 @@ set clipboard=autoselect,unnamedplus
 
 set listchars=extends:>,precedes:<
 
-set wildignore=bower_components,node_modules/**,*.png,*.gif,*.jpg,*.tmp
+set wildignore=bower_components/**,node_modules/**,*.png,*.gif,*.jpg,*.tmp,*.min.js
 
 " foldingmethods for gvim are specified in .gvimrc (they differ a bit)
 set foldcolumn=0
@@ -209,6 +210,9 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 """ Plugins {{{
 
+" NERDTree
+nnoremap <Leader>t :NERDTreeToggle<CR>
+
 " Fugitive
 nnoremap <Leader>s :Gstatus<CR>
 
@@ -216,7 +220,7 @@ nnoremap <Leader>s :Gstatus<CR>
 let g:tagbar_left = 1
 let g:tagbar_compact = 1
 let g:tagbar_autoclose = 1
-nnoremap <Leader>t :TagbarToggle<CR>
+" nnoremap <Leader>t :TagbarToggle<CR>
 
 " ctrlp
 let g:ctlp_extensions = ['funky']
@@ -225,11 +229,11 @@ let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_max_height = 25
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_use_caching = 25
-let g:ctrlp_switch_buffer = 't'
+let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](bundle|node_modules|bower_components)$',
+  \ 'dir':  '\v[\/](bundle|node_modules|lib|bower_components)$',
   \ 'file': '\v\.(ps|png|gif|exe|so|jpg|svg|ttf|pdf|zip)$',
   \ 'link': '',
   \ }
@@ -247,7 +251,7 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Syntastic
 let g:syntastic_scala_checkers = ['fsc']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
