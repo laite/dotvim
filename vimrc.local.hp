@@ -1,5 +1,24 @@
-" no relative numbers
-set norelativenumber
+
+Plugin 'gre/play2vim'
+Plugin 'embear/vim-localvimrc'
+
+" local vimrc whitelist
+let g:localvimrc_persistent=1
+
+set relativenumber
+set expandtab
+set ssop-=folds
+
+set tabstop=2					" number of spaces a tab counts for
+set expandtab					" don't handle tab as spaces
+set shiftwidth=2				" number of spaces for (auto)indent
+
+set guifont=Monospace\ 9
+
+inoremap <Leader>, <Esc>A;<Esc>
+nnoremap <Leader>, <Esc>mzA;<Esc>`z
+
+inoremap <C-s> <Esc>:w<CR>
 
 " set pretty colors
 if has("gui_running")
@@ -7,3 +26,8 @@ if has("gui_running")
 else
 	color jellybeans
 endif
+
+au BufRead,BufNewFile *.scala.html set filetype=html syntax=play2-html
+au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
+au BufRead,BufNewFile */conf/*.conf setf play2-conf
+au BufRead,BufNewFile plugins.sbt set filetype=scala
