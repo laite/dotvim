@@ -1,9 +1,6 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 
-" neovim specific
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
 
 " Vundle install {{{
 filetype off
@@ -98,6 +95,14 @@ set laststatus=2
 let mapleader = "ö"
 let g:is_bash=1
 
+
+" neovim specific
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+
+nnoremap <Leader>s :split<CR>:term<CR>
+nnoremap <Leader>S :vsplit<CR>:term<CR>
+
 " commandline mappings
 cnoreabbrev vhelp belowright vert help
 " make ctrl-p and ctrl-n behave like Up/Down-keys on command line
@@ -152,6 +157,14 @@ nnoremap <C-j> <C-w>w
 nnoremap <C-k> <C-w>W
 nnoremap <C-h> gT
 nnoremap <C-l> gt
+
+" easier jumping between windows and tabs
+tnoremap <C-j> <C-\><C-n><C-w>w
+tnoremap <C-k> <C-\><C-n><C-w>W
+tnoremap <C-h> <C-\><C-n>gT
+tnoremap <C-l> <C-\><C-n>gt
+
+tnoremap <Esc> <C-\><C-n>
 
 " entering insert mode hides hlsearch, but we want to get it back with n and N
 nnoremap n :set hlsearch<CR>n
@@ -213,9 +226,6 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 
 """ Plugins {{{
-
-" Fugitive
-nnoremap <Leader>s :Gstatus<CR>
 
 " Tagbar
 let g:tagbar_left = 1
