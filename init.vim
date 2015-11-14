@@ -1,9 +1,3 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-
-" neovim specific
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
 
 " Vundle install {{{
 filetype off
@@ -51,7 +45,7 @@ filetype plugin indent on
 
 " }}} End vundle install
 
-
+" common
 syntax on						" make pretty colors
 set shortmess+=I				" hide start screen
 set backspace=indent,eol,start 	" allow backspacing over everything in insert mode
@@ -97,6 +91,20 @@ set laststatus=2
 
 let mapleader = "ö"
 let g:is_bash=1
+
+" neovim specific
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+
+" easier jumping between windows and tabs
+tnoremap <C-j> <C-\><C-n><C-w>w
+tnoremap <C-k> <C-\><C-n><C-w>W
+tnoremap <C-h> <C-\><C-n>gT
+tnoremap <C-l> <C-\><C-n>gt
+
+" spawn terminal on split
+nnoremap <Leader>s :split<CR>:term<CR>
+nnoremap <Leader>S :vsplit<CR>:term<CR>
 
 " commandline mappings
 cnoreabbrev vhelp belowright vert help
@@ -214,9 +222,6 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 """ Plugins {{{
 
-" Fugitive
-nnoremap <Leader>s :Gstatus<CR>
-
 " Tagbar
 let g:tagbar_left = 1
 let g:tagbar_compact = 1
@@ -252,11 +257,15 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Syntastic
 let g:syntastic_scala_checkers = ['fsc']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme="jellybeans"
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_y=''
+
+
 
 " tComment
 nnoremap <Leader>C :TCommentBlock<CR>
