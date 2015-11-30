@@ -18,6 +18,7 @@ Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree.git'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
@@ -52,7 +53,6 @@ filetype plugin indent on
 syntax on						" make pretty colors
 set shortmess+=I				" hide start screen
 set backspace=indent,eol,start 	" allow backspacing over everything in insert mode
-set t_Co=256					" use 256 colors
 set backup						" keep a backup file
 set history=200					" keep 200 lines of command line history
 set ruler						" show the cursor position all the time
@@ -209,6 +209,10 @@ inoremap <Leader>ö ö
 " make C-p into <esc> until I figure out something better
 inoremap <C-p> <Esc>
 
+" experimental, let's try 'jk' as esc
+inoremap jk <Esc>
+inoremap <Leader>jk jk
+
 " define motion 'numbers' in external file
 source ~/.vim/numbermaps.vim
 
@@ -227,11 +231,14 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 """ Plugins {{{
 
+" NERDTree
+nnoremap <Leader>t :NERDTreeToggle<CR>
+
 " Tagbar
 let g:tagbar_left = 1
 let g:tagbar_compact = 1
 let g:tagbar_autoclose = 1
-nnoremap <Leader>t :TagbarToggle<CR>
+" nnoremap <Leader>t :TagbarToggle<CR>
 
 " ctrlp
 let g:ctlp_extensions = ['funky']
@@ -262,7 +269,7 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Syntastic
 let g:syntastic_scala_checkers = ['fsc']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
