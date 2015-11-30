@@ -6,11 +6,5 @@ set shiftwidth=2				" number of spaces for (auto)indent
 
 set sessionoptions=blank,buffers,curdir,help,tabpages,winsize
 
-" set pretty colors
-if has("gui_running")
-	"color BusyBee
-  color vivify
-	let g:airline_theme = "kalisi"
-else
-	color jellybeans
-endif
+color laite07
+let g:airline_theme = "murmur"
