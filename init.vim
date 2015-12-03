@@ -67,9 +67,9 @@ set linebreak
 set showbreak=\ -->\ 
 set number
 set relativenumber				" use relative numbers by default
-set tw=0
+set tw=100
 set ch=1
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 set completeopt-=preview
 
 set clipboard=unnamedplus
@@ -88,9 +88,19 @@ set foldlevel=99
 set showtabline=1
 set laststatus=2
 
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+  else
+    setlocal colorcolumn=+1
+  endif
+endfunction
+
+
 let mapleader = "ö"
 let g:is_bash=1
 
+nnoremap <silent> <leader>l :call g:ToggleColorColumn()<CR>
 " neovim specific
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -140,6 +150,9 @@ nnoremap <C-H> "_X
 nnoremap \| =
 nnoremap \|\| ==
 nnoremap <Leader>\| \|
+
+" don't put replaced data in the last buffer
+nnoremap s "_s
 
 " also delete always to void with x/X
 nnoremap x "_x
