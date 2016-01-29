@@ -35,6 +35,7 @@ hi Cursor		guifg=NONE		guibg=#657c80	gui=none
 hi Visual		guifg=#657c80	guibg=#cfddbc	gui=none
 " hi VisualNOS
 " hi Search
+hi Search 		ctermfg=0 		ctermbg=11 		cterm=none 		guifg=#333333 	guibg=#669999	gui=none
 hi Folded		ctermfg=103		ctermbg=238		cterm=none		guifg=#455c60	guibg=#002029	gui=none
 hi Title		ctermfg=7		ctermbg=none	cterm=bold		guifg=#f6f3e8	guibg=NONE		gui=bold
 hi StatusLine	ctermfg=7		ctermbg=238		cterm=none		guifg=#f6f3e8	guibg=#444444	gui=none
