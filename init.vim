@@ -25,7 +25,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tacahiroy/ctrlp-funky'
 " Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'chase/vim-ansible-yaml'
-" Plugin 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'derekwyatt/vim-scala.git'
 
 " After installing tern_for_vim one must run `npm install` 
@@ -46,30 +47,30 @@ filetype plugin indent on
 " }}} End vundle install
 
 " common
-syntax on						" make pretty colors
-set shortmess+=I				" hide start screen
 set backspace=indent,eol,start 	" allow backspacing over everything in insert mode
-set backup						" keep a backup file
-set history=200					" keep 200 lines of command line history
-set ruler						" show the cursor position all the time
-set showcmd						" display incomplete commands
-set incsearch					" do incremental searching
-set mouse=a						" enable mouse for all modes
-set hlsearch					" highlight search results
-set tabstop=4					" number of spaces a tab counts for
-set noexpandtab					" don't handle tab as spaces
-set shiftwidth=4				" number of spaces for (auto)indent
-set nowrap						" don't wrap long lines
-set ignorecase smartcase 		" ignore case on lowcase-searches
-set scrolloff=5 				" always +- 5 rows in sight
-set sidescrolloff=5				" always +- 5 columns
-set linebreak
-set showbreak=\ -->\ 
-set number
-set relativenumber				" use relative numbers by default
-set tw=100
+set backup						          " keep a backup file
 set ch=1
-" let loaded_matchparen = 1
+set history=200					        " keep 200 lines of command line history
+set hlsearch					          " highlight search results
+set ignorecase smartcase 		    " ignore case on lowcase-searches
+set incsearch					          " do incremental searching
+set linebreak
+set mouse=a						          " enable mouse for all modes
+set noexpandtab					        " don't handle tab as spaces
+set nohidden
+set nowrap						          " don't wrap long lines
+set number
+set relativenumber				      " use relative numbers by default
+set ruler						            " show the cursor position all the time
+set scrolloff=5 				        " always +- 5 rows in sight
+set shiftwidth=4				        " number of spaces for (auto)indent
+set shortmess+=I				        " hide start screen
+set showbreak=\ -->\ 
+set showcmd						          " display incomplete commands
+set sidescrolloff=5				      " always +- 5 columns
+set tabstop=4					          " number of spaces a tab counts for
+set tw=100
+syntax on						            " make pretty colors
 set completeopt-=preview
 
 set clipboard=unnamedplus
@@ -105,10 +106,6 @@ nnoremap <silent> <leader>l :call g:ToggleColorColumn()<CR>
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
-" spawn terminal on split
-nnoremap <Leader>s :split<CR>:term<CR>
-nnoremap <Leader>S :vsplit<CR>:term<CR>
-
 " commandline mappings
 cnoreabbrev vhelp belowright vert help
 " make ctrl-p and ctrl-n behave like Up/Down-keys on command line
@@ -132,24 +129,12 @@ nnoremap <Space> :
 " quick save
 nnoremap K :w<CR>
 
-" clear search highlight
-nnoremap <silent> <Leader>ä :nohl<CR>
-
-" create empty lines and return to normal mode
-nnoremap <Leader>o o<Esc>
-nnoremap <Leader>O O<Esc>
-nnoremap <Leader><Leader>o o<ESC>kO<ESC>j
-
-" delete row's contents with leader-d
-nnoremap <Leader>d ^D
-
 " treat c-h as real backspace also in normal mode
 nnoremap <C-H> "_X
 
 " use | to indent the lint
 nnoremap \| =
 nnoremap \|\| ==
-nnoremap <Leader>\| \|
 
 " don't put replaced data in the last buffer
 nnoremap s "_s
@@ -182,6 +167,7 @@ nnoremap N :set hlsearch<CR>N
 " use <c-p> to jump immediately to the command line
 nnoremap <C-p> :<C-p>
 
+
 " make some use for 'ä'
 nnoremap ä `
 nnoremap ää ``
@@ -202,25 +188,13 @@ nnoremap q: :q
 " autocomplete { and newline, move cursor to middle
 inoremap {<CR> {<CR>}<Esc>O
 
-" by default, brackets are autocompleted, we can skip this with leader-key
-inoremap <Leader>[ [
-inoremap <Leader>( (
-inoremap <Leader>{ {
-inoremap <Leader>< <
-inoremap <Leader>" "
-inoremap <Leader>' '
-
 " also, we'll add << to an exception (useful in cpp)
 inoremap << <<
-
-" since we use ö also as a <leader>, we define 'öö' as a simple 'ö'
-inoremap <Leader>ö ö
 " make C-p into <esc> until I figure out something better
 inoremap <C-p> <Esc>
 
 " experimental, let's try 'jk' as esc
 inoremap jk <Esc>
-inoremap <Leader>jk jk
 
 " define motion 'numbers' in external file
 source ~/.vim/numbermaps.vim
@@ -237,6 +211,43 @@ endfunc
 " call numbertoggle through <c-n>
 nnoremap <C-n> :call NumberToggle()<cr>
 
+" Leader mappings
+"
+" spawn terminal on split
+nnoremap <Leader>s :split<CR>:term<CR>
+nnoremap <Leader>S :vsplit<CR>:term<CR>
+
+" clear search highlight
+nnoremap <silent> <Leader>ä :nohl<CR>
+
+" create empty lines and return to normal mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+nnoremap <Leader><Leader>o o<ESC>kO<ESC>j
+
+" delete row's contents with leader-d
+nnoremap <Leader>d ^D
+
+" Open new, empty tab
+nnoremap <Leader>T :tabnew<CR>
+
+" Open quick 'scratch' view
+nnoremap <Leader>R :sp<CR>:enew<CR>i
+
+vnoremap <Leader>s :sort<CR>
+
+" by default, brackets are autocompleted, we can skip this with leader-key
+inoremap <Leader>[ [
+inoremap <Leader>( (
+inoremap <Leader>{ {
+inoremap <Leader>< <
+inoremap <Leader>" "
+inoremap <Leader>' '
+
+" since we use ö also as a <leader>, we define 'öö' as a simple 'ö'
+inoremap <Leader>ö ö
+" same with jk, which is used as an escape
+inoremap <Leader>jk jk
 
 """ Plugins {{{
 
@@ -253,7 +264,7 @@ let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_max_height = 25
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_use_caching = 25
-let g:ctrlp_switch_buffer = 't'
+let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_custom_ignore = {
@@ -276,6 +287,11 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 " Syntastic
 let g:syntastic_scala_checkers = ['fsc']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_jump = 1
+
+nnoremap <Leader>e :lnext<CR>
+nnoremap <Leader>E :lprevious<CR>
 
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
